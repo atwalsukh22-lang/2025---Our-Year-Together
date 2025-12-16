@@ -1,19 +1,37 @@
+/* ===========================
+   Global Reset & Base Styles
+=========================== */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   font-family: 'Poppins', sans-serif;
   background: #fffafc;
   color: #333;
+  overflow-x: hidden; /* Prevent horizontal scroll outside slides */
 }
 
+img, video {
+  display: block;
+  max-width: 100%;
+}
+
+/* ===========================
+   Story Container & Slides
+=========================== */
 .story {
   display: flex;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
   height: 100vh;
+}
+
+.story::-webkit-scrollbar {
+  display: none;
 }
 
 .slide {
@@ -28,18 +46,21 @@ body {
   text-align: center;
 }
 
-/* Cover */
+/* ===========================
+   Cover Slide
+=========================== */
 .cover {
   background: linear-gradient(135deg, #ffd1dc, #ffe4ec);
 }
 
 .cover h1 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   margin-bottom: 10px;
 }
 
 .cover p {
   font-weight: 300;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
 }
 
 .hint {
@@ -48,18 +69,32 @@ body {
   opacity: 0.6;
 }
 
-/* Memories */
-.memories img {
+/* ===========================
+   Memories Slides
+=========================== */
+.memories img,
+.memories video {
   max-width: 80%;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.15);
   margin-bottom: 20px;
 }
 
-/* Magic tap */
+.memories video {
+  outline: none;
+}
+
+/* ===========================
+   Magic Tap Slide
+=========================== */
 .magic {
   background: #fff0f5;
   cursor: pointer;
+  transition: background 0.3s;
+}
+
+.magic:hover {
+  background: #ffe4ec;
 }
 
 #magicBox {
@@ -67,6 +102,11 @@ body {
   border-radius: 40px;
   background: #ffd1dc;
   margin-bottom: 20px;
+  transition: transform 0.2s;
+}
+
+.magic:hover #magicBox {
+  transform: scale(1.05);
 }
 
 #magicText {
@@ -74,6 +114,9 @@ body {
   font-weight: 500;
 }
 
+/* ===========================
+   Overlay for Tap to Begin
+=========================== */
 #musicOverlay {
   position: fixed;
   inset: 0;
@@ -81,14 +124,43 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
   letter-spacing: 1px;
-  z-index: 10;
+  cursor: pointer;
+  z-index: 9999;
 }
 
-/* Ending */
+/* ===========================
+   Ending Slide
+=========================== */
 .ending {
   background: #ffe4ec;
   font-size: 1.3rem;
   line-height: 1.6;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
+
+/* ===========================
+   Responsive Text & Layout
+=========================== */
+@media (max-width: 768px) {
+  .cover h1 {
+    font-size: 2.2rem;
+  }
+  .cover p,
+  .magic p,
+  .ending p {
+    font-size: 1rem;
+  }
+  .memories img,
+  .memories video {
+    max-width: 90%;
+  }
+}
+
+
