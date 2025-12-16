@@ -13,7 +13,7 @@
 
 <!-- Background music -->
 <audio id="bgMusic" loop preload="auto">
-  <source src="music.mp4" type="audio/mpeg">
+  <source src="music.mp4" type="audio/mp4">
   Your browser does not support the audio element.
 </audio>
 
@@ -177,16 +177,15 @@ const slideMessages = [
 /* --------------------------
    Sparkles & hearts on tap
 -------------------------- */
-function createSparkle(e) {
+unction createSparkle(e) {
   const sparkle = document.createElement("div");
   sparkle.className = Math.random() > 0.5 ? "sparkle" : "heart";
   sparkle.style.left = e.clientX + "px";
   sparkle.style.top = e.clientY + "px";
-  sparkle.innerText = Math.random() > 0.5 ? 
+  sparkle.innerText = Math.random() > 0.5 ? "💖" : "✨";
   document.body.appendChild(sparkle);
   setTimeout(() => sparkle.remove(), 1200);
 }
-
 function showSlideMessage(slideIndex) {
   const messages = slideMessages[slideIndex] || ["You're amazing "];
   const text = messages[Math.floor(Math.random() * messages.length)];
