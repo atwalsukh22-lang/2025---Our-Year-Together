@@ -1,70 +1,94 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: #fffafc;
   color: #333;
+}
+
+.story {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  height: 100vh;
+}
+
+.slide {
+  scroll-snap-align: start;
+  min-width: 100vw;
+  height: 100vh;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-.hero {
+/* Cover */
+.cover {
   background: linear-gradient(135deg, #ffd1dc, #ffe4ec);
-  padding: 120px 20px;
-  color: #5d3a6a;
 }
 
-.hero h1 {
+.cover h1 {
   font-size: 3rem;
+  margin-bottom: 10px;
 }
 
-.hero .btn {
-  display: inline-block;
-  padding: 12px 25px;
-  background: #ffb6c1;
-  color: white;
-  border-radius: 50px;
-  text-decoration: none;
+.cover p {
+  font-weight: 300;
 }
 
-section {
-  padding: 60px 20px;
-  max-width: 800px;
-  margin: auto;
+.hint {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  opacity: 0.6;
 }
 
-h2 {
-  color: #ff91a4;
+/* Memories */
+.memories img {
+  max-width: 80%;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  margin-bottom: 20px;
 }
 
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.event {
+/* Magic tap */
+.magic {
   background: #fff0f5;
-  padding: 15px;
-  border-radius: 15px;
+  cursor: pointer;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-}
-
-.gallery img {
-  width: 100%;
-  border-radius: 20px;
-}
-
-.secret {
-  background: #ffe4ec;
-  border-radius: 20px;
-  padding: 50px 20px;
-}
-
-footer {
-  padding: 30px;
+#magicBox {
+  padding: 20px 30px;
+  border-radius: 40px;
   background: #ffd1dc;
+  margin-bottom: 20px;
+}
+
+#magicText {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+#musicOverlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #ffd1dc, #ffe4ec);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  z-index: 10;
+}
+
+/* Ending */
+.ending {
+  background: #ffe4ec;
+  font-size: 1.3rem;
+  line-height: 1.6;
 }
