@@ -13,7 +13,7 @@
 
 <!-- Background music -->
 <audio id="bgMusic" loop preload="auto">
-  <source src="music.mp3" type="audio/mpeg">
+  <source src="music.mp4" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
@@ -46,6 +46,11 @@
     <p>This one will always stay with me</p>
   </section>
 
+  <section class="slide memories">
+    <img src="img4.jpg" alt="Memory 3">
+    <p>This one will always stay with me</p>
+  </section>
+  
   <!-- Video slides -->
   <section class="slide memories">
     <video src="video1.mp4" controls></video>
@@ -85,10 +90,10 @@ function startMusic() {
    Magic text
 -------------------------- */
 const magicMessages = [
-  "I love you 💖",
-  "You matter more than you know 🌸",
-  "This year was better because of you 💕",
-  "I would choose you over and over ☀️"
+  "I love you my bachy",
+  "You matter more than you know ",
+  "This year was better because of you ",
+  "I would choose you over and over "
 ];
 
 function revealText() {
@@ -100,13 +105,13 @@ function revealText() {
    Slide-specific sweet messages
 -------------------------- */
 const slideMessages = [
-  ["I love you 💖", "You make me smile ☀️", "Forever and always 💕"], // cover
-  ["Some moments are magical ✨", "You brighten my day 🌸", "So happy we're together ❤️"], // slide 1
-  ["Remember this moment 💕", "Sweet memories 🌸", "You mean the world to me 💖"], // slide 2
-  ["Awiee, you're my sunshine ☀️", "You make life better 💕", "So thankful for you ❤️"], // slide 3
-  ["You're my universe 🌟", "This is the best day 💖", "You are loved 💕"], // slide 4
-  ["You always make me happy 💖", "Life is sweeter with you 🌸", "Your smile is magic ✨"], // slide 5
-  ["Our moments together are special 💕", "You’re my favorite 💖", "So glad we met 🌸"], // slide 6
+  ["I love you ", "You make me smile ", "Forever and always #"], // cover
+  ["Some moments are magical ", "You brighten my day ", "So happy we're together "], // slide 1
+  ["Remember this moment ", "Sweet memories ", "You mean the world to me "], // slide 2
+  ["Awiee, you're my sunshine ", "You make life better ", "So thankful for you "], // slide 3
+  ["You're my universe ", "This is the best day ", "You are loved "], // slide 4
+  ["You always make me happy ", "Life is sweeter with you ", "Your smile is magic "], // slide 5
+  ["Our moments together are special ", "You’re my favorite ", "So glad we met "], // slide 6
   // Add more arrays for additional slides
 ];
 
@@ -118,13 +123,13 @@ function createSparkle(e) {
   sparkle.className = Math.random() > 0.5 ? "sparkle" : "heart";
   sparkle.style.left = e.clientX + "px";
   sparkle.style.top = e.clientY + "px";
-  sparkle.innerText = Math.random() > 0.5 ? "💖" : "✨";
+  sparkle.innerText = Math.random() > 0.5 ? 
   document.body.appendChild(sparkle);
   setTimeout(() => sparkle.remove(), 1200);
 }
 
 function showSlideMessage(slideIndex) {
-  const messages = slideMessages[slideIndex] || ["You're amazing 💖"];
+  const messages = slideMessages[slideIndex] || ["You're amazing "];
   const text = messages[Math.floor(Math.random() * messages.length)];
 
   const messageBox = document.createElement("div");
