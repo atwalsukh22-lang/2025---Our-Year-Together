@@ -9,13 +9,15 @@
 </head>
 <body>
 
-<audio id="bgMusic" loop>
+<audio id="bgMusic" loop preload="auto">
   <source src="music.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
 </audio>
 
-  <div id="musicOverlay" onclick="startMusic()">
+<div id="musicOverlay" onclick="startMusic()">
   Tap to begin
 </div>
+
 <div class="story">
 
   <!-- Slide 1: Cover -->
@@ -27,99 +29,96 @@
 
   <!-- Slide 2: Memories -->
   <section class="slide memories">
-    <img src="img1.jpg">
+    <img src="img1.jpg" alt="Memory 1">
     <p>Some moments never fade</p>
   </section>
 
   <section class="slide memories">
-    <img src="img2.jpg">
+    <img src="img2.jpg" alt="Memory 2">
     <p>Even the ordinary felt special</p>
   </section>
 
   <section class="slide memories">
-    <img src="img3.jpg">
-    <p>This one will always stay with me</p>
-  </section>
-
-   <section class="slide memories">
-    <img src="img4.jpg">
+    <img src="img3.jpg" alt="Memory 3">
     <p>This one will always stay with me</p>
   </section>
 
   <section class="slide memories">
-    <img src="img5.jpg">
-    <p>isn't it sladak</p>
+    <img src="img4.jpg" alt="Memory 4">
+    <p>This one will always stay with me</p>
   </section>
 
   <section class="slide memories">
-    <img src="img6.jpg">
-    <p>awiee that was our starting of smth sladak</p>
+    <img src="img5.jpg" alt="Memory 5">
+    <p>Isn't it sladak</p>
   </section>
 
   <section class="slide memories">
-    <img src="img7.jpg">
-    <p>and there you cared for me ,you'll always have my heart</p>
+    <img src="img6.jpg" alt="Memory 6">
+    <p>Awiee, that was the start of something sladak</p>
   </section>
 
   <section class="slide memories">
-    <img src="img8.jpg">
+    <img src="img7.jpg" alt="Memory 7">
+    <p>And there you cared for me, you'll always have my heart</p>
+  </section>
+
+  <section class="slide memories">
+    <img src="img8.jpg" alt="Memory 8">
     <p>You bore so much pain, yet you never left me</p>
   </section>
 
   <section class="slide memories">
-    <img src="img9.jpg">
-    <p>my love</p>
+    <img src="img9.jpg" alt="Memory 9">
+    <p>My love</p>
   </section>
 
   <section class="slide memories">
-    <img src="img10.jpg">
-    <p>thank you for not letting me go</p>
+    <img src="img10.jpg" alt="Memory 10">
+    <p>Thank you for not letting me go</p>
   </section>
 
   <section class="slide memories">
-    <img src="img14.jpg">
-    <p>oh my cutie</p>
+    <img src="img14.jpg" alt="Memory 14">
+    <p>Oh my cutie</p>
   </section>
 
   <section class="slide memories">
-    <img src="img15.jpg">
-    <p>last year, today</p>
+    <img src="img15.jpg" alt="Memory 15">
+    <p>Last year, today</p>
   </section>
 
   <section class="slide memories">
-    <img src="img16.jpg">
-    <p>oh tekr's sladak </p>
+    <img src="img16.jpg" alt="Memory 16">
+    <p>Oh tekr's sladak</p>
   </section>
 
   <section class="slide memories">
-    <img src="img17.jpg">
-    <p>one day, we will wear it</p>
+    <img src="img17.jpg" alt="Memory 17">
+    <p>One day, we will wear it</p>
   </section>
 
-  
+  <!-- Video slides -->
   <section class="slide memories">
-    <img src="video1.mp4">
-    <p>look at your tiny finger awiee</p>
+    <video src="video1.mp4" controls></video>
+    <p>Look at your tiny finger awiee</p>
   </section>
 
-  
   <section class="slide memories">
-    <img src="video2.mp4">
-    <p>the very first video i made for you</p>
+    <video src="video2.mp4" controls></video>
+    <p>The very first video I made for you</p>
   </section>
 
-  
   <section class="slide memories">
-    <img src="video3.mp4">
-    <p>you're my universe</p>
+    <video src="video3.mp4" controls></video>
+    <p>You're my universe</p>
   </section>
 
-  
   <section class="slide memories">
-    <img src="video4.mp4">
-    <p>so don't ever leave me</p>
+    <video src="video4.mp4" controls></video>
+    <p>So don't ever leave me</p>
   </section>
-  
+
   <!-- Slide 3: Tap magic -->
   <section class="slide magic" onclick="revealText()">
     <div id="magicBox">Tap anywhere</div>
@@ -128,15 +127,13 @@
 
   <!-- Slide 4: Ending -->
   <section class="slide ending">
-    <p>
-      No matter where time takes us,
-      this year will always exist here.
-    </p>
+    <p>No matter where time takes us, this year will always exist here.</p>
   </section>
 
 </div>
 
-<teez>
+<!-- JS -->
+<script>
 const messages = [
   "I love you my teez",
   "You matter more than you know",
@@ -148,11 +145,14 @@ function revealText() {
   const text = messages[Math.floor(Math.random() * messages.length)];
   document.getElementById("magicText").innerText = text;
 }
-</function startMusic() {
+
+function startMusic() {
   const music = document.getElementById("bgMusic");
-  music.play();
+  music.play().catch(err => console.log("Audio play failed:", err));
   document.getElementById("musicOverlay").style.display = "none";
-}>
+}
+</script>
 
 </body>
 </html>
+
