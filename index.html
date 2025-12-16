@@ -3,161 +3,157 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our 2025 - Our first sladak year together </title>
+  <title>Our Year</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Poppins', Arial, sans-serif;
-      text-align: center;
-      background-color: #f9f9f9;
-      padding: 20px;
-      margin: 0;
-    }
-    header.hero {
-      padding: 50px 20px;
-      background: #ffe0e0;
-      border-radius: 10px;
-      margin-bottom: 30px;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background-color: #ff6b81;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    section {
-      margin-bottom: 40px;
-      padding: 0 10px;
-    }
-    h2 {
-      margin-bottom: 15px;
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 20px;
-    }
-    .gallery img, .gallery video {
-      max-width: 250px;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-    footer {
-      margin-top: 50px;
-      font-size: 0.9em;
-      color: #555;
-    }
-    .cute-text {
-      max-width: 600px;
-      margin: 0 auto 20px auto;
-      background-color: #fff0f5;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-  </style>
 </head>
 <body>
 
-<!-- Music autoplay and loop -->
-<audio autoplay loop>
+<audio id="bgMusic" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<header class="hero">
-  <h1>Our 2025</h1>
-  <p>A year full of memories, laughs, and friendship</p>
-  <a href="#memories" class="btn">See Memories</a>
-</header>
+  <div id="musicOverlay" onclick="startMusic()">
+  Tap to begin
+</div>
 
-<section>
-  <h2> A Letter For my bacha</h2>
-  <p class="cute-text">
-    This year wouldn’t have been the same without you, my love.
-    Every laugh, every late-night chat, every silly moment is so sladak. 
-    Thank you for being my favorite person to talk to, and you're literally my biggest cheerleader.
-  </p>
-  <p class="cute-text">
-    Even from miles away, you’ve been there for me through everything. I feel so lucky to have a soul sister like you. 
-    One year of knowing each other, and every moment has been unforgettable.
-  </p>
-</section>
+<div class="story">
 
-<section>
-  <h2>you know ypu are so sladak</h2>
-  <p class="cute-text">
-    I love the way you make me laugh, even when I’m having a rough day. 
-    I love our late-night talks, our random memes, and how we just get each other without even trying. 
-    You make life brighter just by being you.
-  </p>
-  <p class="cute-text">
-    I can’t believe it’s been a whole year since we met, It’s crazy how fast time flies when you’re having fun with someone amazing. 
-    I can't wait to make more sladak memories with you even if some are just virtual for now.
-  </p>
-</section>
+  <!-- Slide 1: Cover -->
+  <section class="slide cover">
+    <h1>Our Year</h1>
+    <p>A quiet collection of moments</p>
+    <span class="hint">Swipe to continue</span>
+  </section>
 
-<section id="memories">
-  <h2>Our Memories</h2>
-  <div class="gallery">
-    <!-- 18 Images -->
-    <img src="img1.jpg" alt="Memory 1">
-    <img src="img2.jpg" alt="Memory 2">
-    <img src="img3.jpg" alt="Memory 3">
-    <img src="img4.jpg" alt="Memory 4">
-    <img src="img5.jpg" alt="Memory 5">
-    <img src="img6.jpg" alt="Memory 6">
-    <img src="img7.jpg" alt="Memory 7">
-    <img src="img8.jpg" alt="Memory 8">
-    <img src="img9.jpg" alt="Memory 9">
-    <img src="img10.jpg" alt="Memory 10">
-    <img src="img11.jpg" alt="Memory 11">
-    <img src="img12.jpg" alt="Memory 12">
-    <img src="img13.jpg" alt="Memory 13">
-    <img src="img14.jpg" alt="Memory 14">
-    <img src="img15.jpg" alt="Memory 15">
-    <img src="img16.jpg" alt="Memory 16">
-    <img src="img17.jpg" alt="Memory 17">
-    <img src="img18.jpg" alt="Memory 18">
+  <!-- Slide 2: Memories -->
+  <section class="slide memories">
+    <img src="img1.jpg">
+    <p>Some moments never fade</p>
+  </section>
 
-    <!-- 2 Videos -->
-    <video controls>
-      <source src="video1.mp4" type="video/mp4">
-    </video>
-    <video controls>
-      <source src="video2.mp4" type="video/mp4">
-    </video>
-  </div>
-</section>
+  <section class="slide memories">
+    <img src="img2.jpg">
+    <p>Even the ordinary felt special</p>
+  </section>
 
-<section>
-  <h2>Looking Forward</h2>
-  <p class="cute-text">
-    I don’t know what the next year will bring, but I know I want to share it all with you - every laugh, every silly moment, and every memory we make together. 
-    Long distance or not, you’re my favorite person.
-  </p>
-  <p class="cute-text">
-    Here’s to our first full year of friendship, and to many more! I care about you so much, and I’m so grateful to have you in my life.
-  </p>
-</section>
+  <section class="slide memories">
+    <img src="img3.jpg">
+    <p>This one will always stay with me</p>
+  </section>
 
-<section class="secret">
-  <h2>One Last Thing</h2>
-  <p class="cute-text">
-    No matter where life takes us, I just want you to know that I’ll always be here for you. 
-    Happy 1-year anniversary of meeting, and Happy new year my tekr. May this Year and upcoming years give you every bit of happiness.
-  </p>
-</section>
+   <section class="slide memories">
+    <img src="img4.jpg">
+    <p>This one will always stay with me</p>
+  </section>
 
-<footer>
-  <p>Made with love just for my sladak tekr </p>
-</footer>
+  <section class="slide memories">
+    <img src="img5.jpg">
+    <p>isn't it sladak</p>
+  </section>
+
+  <section class="slide memories">
+    <img src="img6.jpg">
+    <p>awiee that was our starting of smth sladak</p>
+  </section>
+
+  <section class="slide memories">
+    <img src="img7.jpg">
+    <p>and there you cared for me ,you'll always have my heart</p>
+  </section>
+
+  <section class="slide memories">
+    <img src="img8.jpg">
+    <p>You bore so much pain, yet you never left me</p>
+  </section>
+
+  <section class="slide memories">
+    <img src="img9.jpg">
+    <p>my love</p>
+  </section>
+
+  <section class="slide memories">
+    <img src="img10.jpg">
+    <p>thank you for not letting me go</p>
+  </section>
+
+  <section class="slide memories">
+    <img src="img14.jpg">
+    <p>oh my cutie</p>
+  </section>
+
+  <section class="slide memories">
+    <img src="img15.jpg">
+    <p>last year, today</p>
+  </section>
+
+  <section class="slide memories">
+    <img src="img16.jpg">
+    <p>oh tekr's sladak </p>
+  </section>
+
+  <section class="slide memories">
+    <img src="img17.jpg">
+    <p>one day, we will wear it</p>
+  </section>
+
+  
+  <section class="slide memories">
+    <img src="video1.mp4">
+    <p>look at your tiny finger awiee</p>
+  </section>
+
+  
+  <section class="slide memories">
+    <img src="video2.mp4">
+    <p>one day, we will wear it</p>
+  </section>
+
+  
+  <section class="slide memories">
+    <img src="video3.mp4">
+    <p>one day, we will wear it</p>
+  </section>
+
+  
+  <section class="slide memories">
+    <img src="video4.mp4">
+    <p>one day, we will wear it</p>
+  </section>
+  
+  <!-- Slide 3: Tap magic -->
+  <section class="slide magic" onclick="revealText()">
+    <div id="magicBox">Tap anywhere</div>
+    <p id="magicText"></p>
+  </section>
+
+  <!-- Slide 4: Ending -->
+  <section class="slide ending">
+    <p>
+      No matter where time takes us,
+      this year will always exist here.
+    </p>
+  </section>
+
+</div>
+
+<teez>
+const messages = [
+  "I love you",
+  "You matter more than you know",
+  "This year was better because of you",
+  "I would choose you over and over"
+];
+
+function revealText() {
+  const text = messages[Math.floor(Math.random() * messages.length)];
+  document.getElementById("magicText").innerText = text;
+}
+</function startMusic() {
+  const music = document.getElementById("bgMusic");
+  music.play();
+  document.getElementById("musicOverlay").style.display = "none";
+}>
 
 </body>
 </html>
