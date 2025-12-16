@@ -11,12 +11,14 @@ body {
   font-family: 'Poppins', sans-serif;
   background: #fffafc;
   color: #333;
-  overflow-x: hidden; /* Prevent horizontal scroll outside slides */
+  overflow-x: hidden;
+  position: relative;
 }
 
 img, video {
   display: block;
   max-width: 100%;
+  border-radius: 20px;
 }
 
 /* ===========================
@@ -44,13 +46,15 @@ img, video {
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
+  transition: background 0.5s;
 }
 
 /* ===========================
    Cover Slide
 =========================== */
 .cover {
-  background: linear-gradient(135deg, #ffd1dc, #ffe4ec);
+  background: linear-gradient(135deg, #ffd1dc, #cce7ff);
 }
 
 .cover h1 {
@@ -78,10 +82,13 @@ img, video {
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.15);
   margin-bottom: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.memories video {
-  outline: none;
+.memories img:hover,
+.memories video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
 }
 
 /* ===========================
@@ -90,11 +97,6 @@ img, video {
 .magic {
   background: #fff0f5;
   cursor: pointer;
-  transition: background 0.3s;
-}
-
-.magic:hover {
-  background: #ffe4ec;
 }
 
 #magicBox {
@@ -115,7 +117,7 @@ img, video {
 }
 
 /* ===========================
-   Overlay for Tap to Begin
+   Overlay
 =========================== */
 #musicOverlay {
   position: fixed;
@@ -146,7 +148,31 @@ img, video {
 }
 
 /* ===========================
-   Responsive Text & Layout
+   Sparkles & Hearts
+=========================== */
+.sparkle,
+.heart {
+  position: absolute;
+  font-size: 1.5rem;
+  pointer-events: none;
+  animation: sparkleAnim 1s ease-out forwards;
+  color: #ff9de2;
+}
+
+@keyframes sparkleAnim {
+  0% { transform: scale(0); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 1; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+@keyframes heartFloat {
+  0% { transform: translateY(0) scale(0); opacity: 1; }
+  50% { transform: translateY(-30px) scale(1.5); opacity: 1; }
+  100% { transform: translateY(-60px) scale(1); opacity: 0; }
+}
+
+/* ===========================
+   Responsive
 =========================== */
 @media (max-width: 768px) {
   .cover h1 {
